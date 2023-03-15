@@ -1,0 +1,28 @@
+h1,
+h2 {
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+h3 {
+  font-size: 20px;
+}
+.card-body {
+  text-align: center;
+}
+.card-icon {
+  font-size: 30px;
+}
+
+.nav-title {
+  color: aquamarine;
+}
+
+.search-button {
+  color: cadetblue;
+  border-color: rgb(0, 140, 255);
+}
+
+.card-title {
+  font-size: 18px;
+}
