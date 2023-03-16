@@ -23,6 +23,16 @@ h3 {
   border-color: rgb(0, 140, 255);
 }
 
+.current-location-search-button{
+  color:darkorchid;
+  border-color: rgb(0, 140, 255);
+}
+
 .card-title {
   font-size: 18px;
+}
+
+a{
+  text-align: center;
+  font-size: 10px;
 }
