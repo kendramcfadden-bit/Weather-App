@@ -1,19 +1,14 @@
-h1,
-h2 {
-  font-size: 30px;
-  margin-top: 50px;
+/* Page Formatting */
+.container{
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
 }
 
-h3 {
-  font-size: 20px;
-}
-.card-body {
-  text-align: center;
-}
-.card-icon {
-  font-size: 30px;
-}
 
+/* Top Row Navigation */
 .nav-title {
   color: aquamarine;
 }
@@ -28,11 +23,39 @@ h3 {
   border-color: rgb(0, 140, 255);
 }
 
+/* Current Day/Time Weather Details */
+h1,
+h2 {
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+.weather-details {
+  font-size: 20px;
+}
+
+/* 5 Day Forecast Details */
+h3 {
+  font-size: 20px;
+}
+
+.card-body {
+  text-align: center;
+  
+}
+.card-icon {
+  font-size: 30px;
+}
+
+
 .card-title {
   font-size: 18px;
 }
 
+
+/* Github Link at Bottom of Page */
 a{
+  display: block;
   text-align: center;
   font-size: 10px;
 }
