@@ -27,24 +27,25 @@
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand">Weather App</a>
-          <form class="d-flex" role="search">
+          <form class="d-flex" id="search-form" role="search">
             <input
               class="form-control me-2"
               type="search"
               placeholder="Location"
               aria-label="Search"
+              id="city-input"
             />
             <button class="btn btn-outline-success search-button" type="submit">
               Search
             </button>
 
             <!-- Determine how to break apart these buttons! -->
-            <button
+            <!-- <button
               class="btn btn-outline-success current-location-search-button"
               type="submit"
             >
               Current Location
-            </button>
+            </button> -->
           </form>
         </div>
       </nav>
@@ -52,20 +53,27 @@
       <!-- Current Weather -->
       <div class="row">
         <div class="col-6">
-          <h1>🌤️ 57°F | 30°C</h1>
-          <div><strong>Precipitation:</strong> <span id="precipitation">XX%</span></div>
-          <div><strong>Wind:</strong> <span id="wind"> mph | XX kmph</span></div>
+          <h1> <span id="icon">🌤️</span>
+            <span id="temperatureF">57</span><span>°F | </span> 
+            <span id="temperatureC">36</span><span>°C</span> 
+
+            </span>
+        
+          
+          
+          <div class="weather-details"><strong>Humidity:</strong> <span id="humidity">XX%</span></div>
+          <div class="weather-details"><strong>Wind:</strong> <span id="wind"> mph | XX kmph</span></div>
         </div>
         <div class="col-6">
           <h2 id="city">
             Denver
             <!-- <i class="fa-regular fa-pen-to-square edit-icon"></i> -->
           </h2>
-          <div id="date-time">
-            <strong>Date/Time:</strong> 2/16/23 5:00PM
+          <div class="weather-details">
+            <strong>Date/Time:</strong><span id="date-time">2/16/23 5:00PM</span> 
           </div>
-          <div class="description">
-            <strong>Weather Description:</strong> Partly Sunny
+          <div class="weather-details">
+            <strong>Weather Description:</strong> <span id="description">Partly Sunny</span> 
           </div>
         </div>
       </div>

@@ -48,9 +48,15 @@ let minute = now.getMinutes();
 
 //Search Engine 
 function displayWeather(response) {
-  let temperatureElement=document.querySelector("#temperature")
-  celsiusTemperature = response.data.main.temp;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  let temperatureCElement=document.querySelector("#temperatureC");
+  let celsiusTemperature = response.data.main.temp;
+  temperatureCElement.innerHTML = Math.round(celsiusTemperature);
+  
+  let temperatureFElement=document.querySelector("#temperatureF");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureFElement.innerHTML = Math.round(fahrenheiTemperature);
+  
+  
  
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = response.data.name;
@@ -83,6 +89,11 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
+function getNewLocation(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchNewLocation(city);
+}
 
 function searchNewLocation(city) {
   //let city = document.querySelector("#location-input");
@@ -91,17 +102,13 @@ function searchNewLocation(city) {
   axios.get(url).then(displayWeather);
 }
 
-function getNewLocation(event) {
-  event.preventDefault();
-  let city = document.querySelector("#location-input").value;
-  searchNewLocation(city);
-}
+
 
 //BUTTON EVENT LISTENERS
 let searchLocationButton = document.querySelector("#search-form");
 searchLocationButton.addEventListener("submit", getNewLocation);
 
-let currentLocationButton = document.querySelector(
-  ".current-location-search-button"
-);
-currentLocationButton.addEventListener("click", getCurrentLocation);
+// let currentLocationButton = document.querySelector(
+//   ".current-location-search-button"
+// );
+// currentLocationButton.addEventListener("click", getCurrentLocation);
