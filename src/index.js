@@ -96,10 +96,10 @@ function getNewLocation(event) {
 }
 
 function searchNewLocation(city) {
-  //let city = document.querySelector("#location-input");
-  let key = "ac209dae1f283fb332a5bb7f50b0f468";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
-  axios.get(url).then(displayWeather);
+  //let city = document.querySelector("#city-input");
+  let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
 }
 
 
