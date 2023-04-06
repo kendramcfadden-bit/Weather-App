@@ -46,6 +46,50 @@ let minute = now.getMinutes();
 // let form = document.querySelector("#search-form");
 // form.addEventListener("submit", search);
 
+//Forecast
+function displayForecast(){
+let forecastElement=document.querySelector("#forecast");
+
+let forecastHTML="<div class="row">";
+forecastHTML= forecastHTML + `
+<div class="weather-forecast" id="forecast">
+
+  <div class="col-2">
+    <div class="forecast-day">Monday</div>
+    <!-- <img src="" alt=""> -->
+    <div class="forecast-icon">🌤️</div>
+    <div class="forecast-temperatures">
+      <span class="forecast-min-temp">32°F | </span><span class="forecast-max-temp">57°F</span>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+`;
+forecastHTML=`</div`>;
+forecastHTML= forecastHTML + `
+<div class="weather-forecast" id="forecast">
+
+  <div class="col-2">
+    <div class="forecast-day">Monday</div>
+    <!-- <img src="" alt=""> -->
+    <div class="forecast-icon">🌤️</div>
+    <div class="forecast-temperatures">
+      <span class="forecast-min-temp">32°F | </span><span class="forecast-max-temp">57°F</span>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+`;
+forecastHTML=`</div`>;
+
+}
+
 //Search Engine 
 function displayWeather(response) {
   let temperatureCElement=document.querySelector("#temperatureC");
@@ -75,6 +119,8 @@ function displayWeather(response) {
   dateElement.innerHTML = ` ${day} ${hour}:${minute}`;
 
   let iconElement = document.querySelector("#icon");
+
+  displayForecast();
 
 }
 
