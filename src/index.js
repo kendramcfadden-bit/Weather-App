@@ -50,44 +50,36 @@ let minute = now.getMinutes();
 function displayForecast(){
 let forecastElement=document.querySelector("#forecast");
 
-let forecastHTML="<div class="row">";
-forecastHTML= forecastHTML + `
-<div class="weather-forecast" id="forecast">
+let days = ["Thu","Fri","Sat","Sun"];
 
-  <div class="col-2">
-    <div class="forecast-day">Monday</div>
-    <!-- <img src="" alt=""> -->
-    <div class="forecast-icon">🌤️</div>
-    <div class="forecast-temperatures">
-      <span class="forecast-min-temp">32°F | </span><span class="forecast-max-temp">57°F</span>
+
+let forecastHTML=`<div class="row">`;
+days.forEach(function(day){
+
+  forecastHTML= forecastHTML + `
+  <div class="weather-forecast" id="forecast">
+  
+    <div class="col-2">
+      <div class="forecast-day">Monday</div>
+      <!-- <img src="" alt=""> -->
+      <div class="forecast-icon">🌤️</div>
+      <div class="forecast-temperatures">
+        <span class="forecast-min-temp">32°F | </span><span class="forecast-max-temp">57°F</span>
+      </div>
+  
     </div>
-
   </div>
-</div>
-
-</div>
-
-`;
-forecastHTML=`</div`>;
-forecastHTML= forecastHTML + `
-<div class="weather-forecast" id="forecast">
-
-  <div class="col-2">
-    <div class="forecast-day">Monday</div>
-    <!-- <img src="" alt=""> -->
-    <div class="forecast-icon">🌤️</div>
-    <div class="forecast-temperatures">
-      <span class="forecast-min-temp">32°F | </span><span class="forecast-max-temp">57°F</span>
-    </div>
-
+  
   </div>
-</div>
+  
+  `;
 
-</div>
 
-`;
-forecastHTML=`</div`>;
+});
 
+
+forecastHTML= forecastHTML + `</div`>;
+forecastElement.innerHTML = forecastHTML;
 }
 
 //Search Engine 
@@ -158,3 +150,5 @@ searchLocationButton.addEventListener("submit", getNewLocation);
 //   ".current-location-search-button"
 // );
 // currentLocationButton.addEventListener("click", getCurrentLocation);
+
+displayForecast();
