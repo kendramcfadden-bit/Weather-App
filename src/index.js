@@ -78,7 +78,7 @@ days.forEach(function(day){
 });
 
 
-forecastHTML= forecastHTML + `</div`>;
+forecastHTML= forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 }
 
