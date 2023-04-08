@@ -76,9 +76,11 @@ if (index<6) {
  </div>
 
   </div>
-`;
-}});
-forecastHTML = forecastHTML + `</div>`;
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
