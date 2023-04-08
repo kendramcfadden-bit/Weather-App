@@ -163,4 +163,4 @@ searchLocationButton.addEventListener("submit", getNewLocation);
 // );
 // currentLocationButton.addEventListener("click", getCurrentLocation);
 
-// displayForecast();
+displayForecast();
