@@ -32,7 +32,13 @@ let minute = now.getMinutes();
 //let year = now.getFullYear();
 //let day=now.getDay();
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  return days[day];
+}
 
 // //Note stating "searching for..."
 // function search(event) {
@@ -48,34 +54,34 @@ let minute = now.getMinutes();
 
 //Forecast Display
 function displayForecast(response) {
+  
+  let forecast=response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
-  
-
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col-2">
-        <div class="forecast-day">${day}</div>
-        
-        <div class="forecast-icon">🌤️</div>
+forecast.forEach(function(forecastDay,index)) {
+if (index<6) {
+
+  forecastHTML =
+  forecastHTML +
+  `
+  <div class="col-2">
+    <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
     
+    <div class="forecast-icon">🌤️</div>
 
-        <div class="forecast-temperatures">
-       <span class="forecast-min-temp">32°F | </span><span class="forecast-max-temp">57°F</span>
-     </div>
 
-      </div>
-  `;
-  });
+    <div class="forecast-temperatures">
+   <span class="forecast-min-temp">${Math.round(forecastDay.temp.min)}°F | </span><span class="forecast-max-temp">${Math.round(forecastDay.temp.max)}°F</span>
+ </div>
 
-  forecastHTML = forecastHTML + `</div>`;
+  </div>
+`;
+}};
+forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
+
 
 //Get the forecast data API call
 function getForecast(coordinates){
@@ -118,7 +124,7 @@ getForecast(response.data.coord)
 
   let iconElement = document.querySelector("#icon");
 
-  displayForecast();
+  // displayForecast();
 
 }
 
@@ -157,4 +163,4 @@ searchLocationButton.addEventListener("submit", getNewLocation);
 // );
 // currentLocationButton.addEventListener("click", getCurrentLocation);
 
-displayForecast();
+// displayForecast();
