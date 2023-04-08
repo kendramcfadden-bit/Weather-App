@@ -46,8 +46,8 @@ let minute = now.getMinutes();
 // let form = document.querySelector("#search-form");
 // form.addEventListener("submit", search);
 
-//Forecast
-function displayForecast() {
+//Forecast Display
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   
@@ -77,6 +77,14 @@ function displayForecast() {
   console.log(forecastHTML);
 }
 
+//Get the forecast data API call
+function getForecast(coordinates){
+  console.log(coordinates);
+  let apiKey = "2ff29bed3181c3526c35cc5408037f85";
+  let apiUrl=`https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`
+axios.get(apiUrl).then(displayForecast);
+}
+
 //Search Engine 
 function displayWeather(response) {
   let temperatureCElement=document.querySelector("#temperatureC");
@@ -104,6 +112,9 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#date-time");
   // dateElement.innerHTML = formatDate(response.data.dt * 1000);
   dateElement.innerHTML = ` ${day} ${hour}:${minute}`;
+
+getForecast(response.data.coord)
+
 
   let iconElement = document.querySelector("#icon");
 
