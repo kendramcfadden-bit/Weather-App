@@ -177,3 +177,4 @@ searchLocationButton.addEventListener("submit", getNewLocation);
 // currentLocationButton.addEventListener("click", getCurrentLocation);
 
 // displayForecast();
+searchNewLocation("Denver");
