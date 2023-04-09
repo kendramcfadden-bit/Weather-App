@@ -68,7 +68,7 @@ if (index<6) {
   <div class="col-2">
     <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
     
-    // <div class="forecast-icon">🌤️</div>
+    
     <img
     src="http://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
