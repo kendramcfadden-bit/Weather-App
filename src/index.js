@@ -68,11 +68,17 @@ if (index<6) {
   <div class="col-2">
     <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
     
-    <div class="forecast-icon">🌤️</div>
-
+    // <div class="forecast-icon">🌤️</div>
+    <img
+    src="http://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png"
+    alt=""
+    width="42"
+  />
 
     <div class="forecast-temperatures">
-   <span class="forecast-min-temp">${Math.round(forecastDay.temp.min)}°F | </span><span class="forecast-max-temp">${Math.round(forecastDay.temp.max)}°F</span>
+   <span class="forecast-min-temp">${Math.round((forecastDay.temp.min* 9) / 5 + 32)}°F | </span><span class="forecast-max-temp">${Math.round((forecastDay.temp.max*9)/ 5+32)}°F</span>
  </div>
 
   </div>
@@ -125,6 +131,11 @@ getForecast(response.data.coord)
 
 
   let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   // displayForecast();
 
