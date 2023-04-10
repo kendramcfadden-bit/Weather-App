@@ -24,14 +24,21 @@
 } */
 
 /* Current Day/Time Weather Details */
-h1,
+h1{
+  font-size: 30px;
+  margin-top: 30px;
+}
 h2 {
   font-size: 30px;
-  margin-top: 50px;
+  margin-top: 58px;
 }
 
 .weather-details {
   font-size: 20px;
+}
+
+.weather-details.1{
+  margin-top:100px;
 }
 
 /* 5 Day Forecast Details */
